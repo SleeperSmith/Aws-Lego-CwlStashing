@@ -1,17 +1,15 @@
 FROM java:8
-ARG ES_TAR_NAME=logstash-2.2.2
-ARG ES_TAR_URL=https://download.elastic.co/logstash/logstash/
-EXPOSE 9200
-EXPOSE 9300
+ARG LS_TAR_NAME=logstash-2.2.2
+ARG LS_TAR_URL=https://download.elastic.co/logstash/logstash/
 
 # Create directory
 RUN mkdir /home/local
 WORKDIR /home/local
 
 # Download
-RUN wget ${ES_TAR_URL}${ES_TAR_NAME}.tar.gz && \
-    tar --strip-components 1 -xvf ${ES_TAR_NAME}.tar.gz && \
-    rm ${ES_TAR_NAME}.tar.gz
+RUN wget ${LS_TAR_URL}${LS_TAR_NAME}.tar.gz && \
+    tar --strip-components 1 -xvf ${LS_TAR_NAME}.tar.gz && \
+    rm ${LS_TAR_NAME}.tar.gz
 
 # Install plugins
 RUN ./bin/plugin install logstash-input-kinesis && \
