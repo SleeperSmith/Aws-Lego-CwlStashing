@@ -22,4 +22,4 @@ ADD aws-log-init.sh ./
 RUN chmod +x ./aws-log-init.sh
 
 # Create user and assign permission
-#ENTRYPOINT ["/home/local/aws-log-init.sh"]
+ENTRYPOINT ["/home/local/aws-log-init.sh"]
