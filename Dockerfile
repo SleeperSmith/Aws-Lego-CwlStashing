@@ -19,6 +19,7 @@ RUN ./bin/plugin install logstash-input-kinesis && \
 ADD worker.rb ./vendor/bundle/jruby/1.9/gems/logstash-input-kinesis-1.4.3-java/lib/logstash/inputs/kinesis/
 ADD ls-aws-cwl.conf ./
 ADD aws-log-init.sh ./
+RUN chmod +x ./aws-log-init.sh
 
 # Create user and assign permission
 #ENTRYPOINT ["/home/local/aws-log-init.sh"]
