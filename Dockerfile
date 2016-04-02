@@ -1,5 +1,5 @@
 FROM java:8
-ARG LS_TAR_NAME=logstash-2.2.2
+ARG LS_TAR_NAME=logstash-2.3.0
 ARG LS_TAR_URL=https://download.elastic.co/logstash/logstash/
 
 # Create directory
